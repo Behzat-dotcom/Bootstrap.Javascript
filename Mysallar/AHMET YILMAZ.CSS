@@ -1,0 +1,22 @@
+* {
+margin:0;
+padding:0;
+border:0;
+}
+
+
+
+div {
+background-color: rgb(210, 205, 205);
+border-radius: 20px;
+padding: 50px;
+justify-items: center;
+align-items: center;
+
+ 
+}
+
+div p {
+font: size 16px;
+
+}

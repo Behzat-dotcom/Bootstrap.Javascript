@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+#tesId{
+    background-color: red;
+}
+
+.testDiv{
+    background-color:darkgray;
+    bottom: 20px;
+    border: 2px solid black;
+    margin: 20px;
+    padding: 20px;
+}

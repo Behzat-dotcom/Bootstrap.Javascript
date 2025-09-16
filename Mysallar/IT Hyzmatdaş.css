@@ -1,0 +1,25 @@
+header h2{
+    color: blue;
+    background: #f7faff ;
+    box-shadow: 0 8px 20px gray;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    padding:20px;
+    display:flex;
+    justify-content: left;
+    align-items: left;
+    
+}
+nav{
+    background-color: #f7faff;
+}
+
+nav ul{
+    display: flex;
+    justify-content: right;
+    list-style: none;
+    gap:10px;
+
+}
+
+ 

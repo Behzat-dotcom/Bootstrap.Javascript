@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotter Root Mysal</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css" integrity="sha384-NvKbDTEnL+A8F/AA5Tc5kmMLSJHUO868P+lDtTpJIeQdGYaUIuLr4lVGOEA1OcMy" crossorigin="anonymous">
+    <style>
+        :root{
+            --footer-bg: #1f2937;
+            --footer-text: #ffffff;
+            --footer-accent: #4f46e5;
+            --border-radius: 0.5rem;
+            --font-family: 'Arial', sans-serif;
+            --transition:0.5s;
+            --footer-link-hover: #5ee993;
+        }
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-family: var(--font-family);
+            line-height: 1.6;
+            background: #f9fafb;
+        }
+
+        .footer{
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 4rem 2rem;
+        }
+        .footer .container{
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .footer-column{
+            flex: 1 1 220px;
+            min-width: 180px;
+        }
+        .footer-column h4{
+            margin-bottom: 1rem;
+            color: var(--footer-accent);
+            font-size: 1.125rem;
+        }
+        .footer-column ul{
+            list-style: none;
+        }
+        .footer-column li{
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-column a{
+            text-decoration: none;
+            color: var(--footer-text);
+            transition: color var(--transition);
+
+        }
+        .footer-column a:hover{
+            color: var(--footer-link-hover);
+        }
+
+        .newsletter-form{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .newsletter-form input[type="email"]{
+            flex: 1 1 200px;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: var(--border-radius);
+         
+        }
+        .newsletter-form button{
+            padding: 0.5rem 1.5rem;
+            border: none;
+            border-radius: var(--border-radius);
+            background-color: var(--footer-accent);
+            color: var(--footer-text);
+            cursor: pointer;
+            transition: background-color var(--transition);
+        }
+        .newsletter-form button:hover{
+            background-color: var(--footer-link-hover);
+        }
+
+        /*Iconlar*/
+        .sosial-icons{
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .sosial-icons a{
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            background: var(--footer-accent);
+            border-radius: 50%;
+            color: var(--footer-text);
+            transition: background-color var(--transition);
+            font-size: 1.1rem;
+            text-decoration: none;
+        }
+        .footer-bottom{
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.875rem;
+            color: var(--footer-text);
+        }
+        @media (max-width: 768px) {
+            .footer .container{
+                flex-direction: column;
+            }
+            .newsletter-form{
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    !-- Footer Root Mysal --!
+
+    <footer class="footer">
+        <div class="container">
+            <!- Footer Column --!>
+            <div class="footer-column">
+                <h4>Biz Barada</h4>
+                <p>Biz, web sahypalaryny döretmek we olary dolandyrmak bilen baglanyşykly ähli zerur maglumatlary hödürleýäris.</p>
+                <div class="sosial-icons">
+                    <a href="#" aria-label="Facebook"> <i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"> <i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"> <i class="fab fa-instagram"></i></a>
+
+                </div>
+            </div>
+       
+
+          <!- Footer Hyzmatlar --!>
+            <div class="footer-column">
+                <h4>Hyzmatlar</h4>
+                <ul>
+                    <li><a href="#">Baş Sahypa</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Hyzmatlar</a></li>
+                    <li><a href="#">Info</a></li>
+                </ul>
+            </div>
+          <!- Footer Info --!>
+            <div class="footer-column">
+                <h4>Janlasyn</h4>
+                <ul>
+                   <p><strong>E Mail</strong>mr.yazgulyyew@gmail.com</p>
+                   <p><strong>Telefon</strong>505 974 95 84</p>
+                   <p><strong>Iş Sagady</strong>08:00-16:00</p>
+                </ul>
+            </div>
+
+            <!- Footer Habarnama --!>
+            <div class="footer-column">
+                <h4>Maglumat Al</h4>
+                <p>Habarlaşmak üçin e-poçta salgyňyzy giriziň:</p>
+                <form action="" class="newsletter-form">
+                    <input type="email" placeholder="E-poçta salgyňyzy giriziň" required>
+                    <button type="submit">Agza Bol</button>
+                </form>
+            </div>
+             </div>
+            <div class="footer-bottom">
+               &copy; 2023 Web Sahypasy. Ähli hukuklar goralan.
+            </div>
+    </footer>
+
+</body>
+</html>

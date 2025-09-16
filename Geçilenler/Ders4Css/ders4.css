@@ -1,0 +1,59 @@
+div{
+    width: 100px; /* 100px genişlik */
+    height: 100px; /* 100px yükseklik */
+    background-color: red; /* Kırmızı arka plan rengi */
+    padding: 10px; /* 10px iç boşluk */
+    margin: 20px; /* 20px dış boşluk */
+    padding-top: 25px; /* Üst iç boşluk 25px */
+    padding-bottom: 25px; /* Alt iç boşluk 25px */
+    padding-left: 15px; /* Sol iç boşluk 15px */
+    padding-right: 15px; /* Sağ iç boşluk 15px */
+
+    margin-top: 10px; /* Üst dış boşluk 10px */
+    margin-bottom: 10px; /* Alt dış boşluk 10px */
+    margin-left: 5px; /* Sol dış boşluk 5px */
+    margin-right: 5px; /* Sağ dış boşluk 5px */
+    margin: 0 10px 20px 30px; /* Üst 0px, Sağ 10px, Alt 20px, Sol 30px dış boşluk */
+    border: 5px solid black; /* 5px kalınlığında siyah kenarlık */
+    border-radius: 30px; /* 10px yuvarlatılmış köşe */
+
+    font-family: Arial, Helvetica, sans-serif; /* Yazı tipi Arial, Helvetica veya sans-serif */
+    font-size: 20px; /* Yazı boyutu 20px */
+    font-weight: bolder; /* Yazı kalınlığı bolder */
+    font-style: italic; /* Yazı stili italik */
+    text-decoration: underline; /* Yazı altı çizili */
+    text-align: center; /* Metin ortalanmış */
+    line-height: 1.5; /* Satır yüksekliği 100px */
+    letter-spacing: 10px; /* Harf aralığı 10px */
+    word-spacing: 20px; /* Kelime aralığı 20px */
+
+    text-transform: uppercase; /* Metni büyük harfe dönüştür */
+
+    background-color: gray; /* Arka plan rengi gri */
+    background-image: url('https://picsum.photos/200/300'); /* Arka plan resmi */
+    background-repeat:no-repeat; /* Arka plan resmi tekrarlanmaz */
+    background-size: cover; /* Arka plan resmi kapsar */
+    background-position: center; /* Arka plan resmi ortalanır */
+    background-attachment: fixed; /* Arka plan resmi sabitlenir */;
+
+    display: grid;
+    visibility: inherit; /* Görünürlük kalıtılır */
+    opacity: 0.5; /* Opaklık %50 */
+
+
+    /*Animasyonlar*/
+    transition: all 0.5s ease; /* Tüm özelliklerde 0.5 saniyelik geçiş */
+    animation-name: fadeIn; /* FadeIn animasyon adı */
+    animation-duration: 2s; /* Animasyon süresi 2 saniye */
+    animation-iteration-count: infinite; /* Animasyon sonsuz kez tekrarlanır */
+    -o-animation-timing-function: ease-in-out; /* Opera için animasyon zamanlama fonksiyonu */
+
+    /*Düzenleme sistemleri*/
+    display: flex; /* Flexbox düzeni */
+    flex-direction: row; /* Flex yönü satır */
+    justify-content: center; /* İçerik yatay olarak ortalanır */
+    align-items: center; /* İçerik dikey olarak ortalanır */
+    flex-wrap: wrap; /* Flex öğeleri sarılır */
+    gap: 10px; /* Flex öğeleri arasında 10px boşluk */
+    flex: 1; /* Flex öğesi genişler */
+}

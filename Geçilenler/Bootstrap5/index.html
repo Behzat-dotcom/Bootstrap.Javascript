@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 4</title>
+</head>
+<link rel="stylesheet" href="">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+<body>
+
+<!--
+.text-lowercase   Bu hemme Harplary Kiçi Yazar.
+.text-uppercase   Bu hemme Harplary Uly Yazar.
+.text-capitalize  Bu Harplary Birinji Harpy Uly Yazar.
+
+-->
+<p class="text-lowercase">.text-Lowercase HEMME HARPLAR KIÇI</p>
+<p class="text-uppercase">.text-upperCase hemme harplary uly yazar</p>
+@foreach(var x Model){
+    <p class="text-capitalize"> @x.tite </p>
+}
+
+
+<!--Font Agyrlygy Stil
+fw-light (Font Weight: 300 e Barabar)
+fw-normal (Font Weight: 400 e Barabar)
+fw-bold (Font Weight: 600 e Barabar)
+fw-bolder (Font Weight: 500 e Barabar)
+fst-italic (Yatay Yaz.)
+fst-normal (Normal Yaz.)
+
+-->
+<p class="fw-light"> .fw-light font-weight : 300</p>
+<p class="fw-normal"> fw  yagny 400</p>
+<p class="fw-bold"> yagny 600</p>
+
+<p class="fw-bolder"> yagny 500</p>
+<p class="fst-italic"> yatay Yazdyr</p>
+
+<p class="fst-normal"> font normal</p>
+
+
+<!-- Söz dekorasiysy-->
+<p>
+    <a href="#" class="text-decoration-none">Söz dekorasiyasy
+    </a>
+</p>
+
+<p class="text-decoration-underline">
+ sölzerin aşagy çyzyar
+</p>
+
+<p class="text-decoration-line-through">Sözlerin üsdini çizer</p>
+
+
+
+
+        <script src="bootstrap.bundle.min.js"></script>
+</body>
+</html>

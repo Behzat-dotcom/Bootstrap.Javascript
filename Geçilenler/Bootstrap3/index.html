@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 2</title>
+</head>
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous"> -->
+
+<link rel="stylesheet" href="bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+<body>
+   <!-- /* .row Sutunler Arasyndna yatay şeklinde Gruplar*/ -->
+   <div class="container">
+    <div class="row bg-danger">
+        <div class="col">1. Sütun</div>
+        <div class="col">2. Sütun</div>
+    </div>
+   </div>
+
+   <!---.col işindeki Sütünleri Awtomat den yagdayda hsaplam bölyar. Eger Naçe Sütünn boljagyny yazmasa özü Awtomat Böler-->
+
+   <div class="row mt-3">
+    <div class="col bg-primary text-white">Col 1</div>
+    <div class="col bg-secondary text-white">Col 2</div>
+    <div class="col bg-success text-white">Col 3</div>
+    <div class="col bg-info text-white">Col 4</div>
+   </div>
+
+   <div class="row mt-3 bg-success text-white">
+
+   <div class="col-6">Salam</div>
+   <div class="col-6">Salam</div>
+   <!-- <div class="col-6">Salam</div> 6/12 -->
+   </div>
+
+    <div class="row mt-3 bg-warning text-white">
+        <!-- col-ms 576 dan başla 768 e çenli -->
+        <div class="col-ms-3">Salam </div> 
+        <div class="col-ms-3">Salam </div> 
+    </div>
+
+    <div class="row mt-3 bg-danger text-white">
+        <!-- .col-md 678 den başlar 991  e çenli-->
+     <div class="col-md-4">Salam</div>
+     <div class="col-md-4">Salam</div>
+     <div class="col-md-4">Salam</div>
+
+    </div>
+
+    <div class="row mt-3 bg-info text-white">
+        <!-- .col-lg 992 den başlar 1200 e çenli-->
+         <div class="col-lg-12">
+         <div class="col-lg-3">Salam</div>
+         <div class="col-lg-3">Salam</div>
+         </div>
+    </div>
+ 
+
+    <div class="row mt-3 bg-dark text-white">
+        <!-- .col-xl 1200 den başlar 1400 e çenli-->
+        <div class="col-xl-6">Salam</div>
+        <div class="col-xl-6">Salam</div>
+
+    </div>
+
+    <div class="row mt-3 bg-secondary text-white">
+        <!-- .col-xxl 1400 den başlar -->
+        <div class="col-xxl-3">Salam</div>
+        <div class="col-xxl-3">Salam</div>
+        <div class="col-xxl-3">Salam</div>
+    </div>
+
+<!---Col-auto Olulygyny Awtomat Hasaplar-->
+<div class="row mt-3">
+    <div class="col-auto bg-primary text-white">Awtomat Ginişlik</div>
+    <div class="col bg-secondary text-white">Galan Bölegi</div>
+</div>
+
+<!---.g-0 classı ile tüm sütunlar arasındaki boşlukları kaldırır.--->
+<!-- .gx-0 classı ile tüm sütunlar arasındaki yatay boşlukları kaldırır.--->
+<!-- .gy-0 classı ile tüm sütunlar arasındaki dikey boşlukları kaldırır.--->
+ <div class="row g-0">
+    <div class="col bg-danger text-white">.g-0</div>
+    <div class="col bg-success text-white">.g-0</div>
+ </div>
+
+ <div class="row gx-0 mt-3">
+    <div class="col bg-danger text-white">.gx-0</div>
+    <div class="col bg-success text-white">.gx-0</div>
+    <div class="col bg-info text-white">.gx-0</div>
+ </div>
+
+ <div class="row gy-0 mt-3">
+    <div class="col bg-danger text-white">.gy-0</div>
+    <div class="col bg-success text-white">.gy-0</div>
+    <div class="col bg-info text-white">.gy-0</div>
+ </div>
+
+ <div class="row gy-0 gx-0 mt-3">
+    <div class="col bg-danger text-white">.gy-0 .gx-0</div>
+    <div class="col bg-success text-white">.gy-0 .gx-0</div>
+    <div class="col bg-info text-white">.gy-0 .gx-0</div>
+ </div>
+
+        <script src="bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+@media print {
+    .no-print {
+        display: none !important;
+       
+    }
+     a{
+            text-decoration: none; color: inherit;
+      }
+      body{
+        -webkit-print-color-adjust: exact; /*Bu kod açyklanmalydyr*/
+        print-color-adjust: exact; /*Bu kod açyklanmalydyr*/
+
+      }
+}
+
+.avatar-xxl{
+    width: 120px; 
+    height: 120px;
+    object-fit: cover;
+}
+.timeline::before{
+content: "";
+position: absolute;
+left: .72rem; top: 0; bottom: 0;
+width: 2px;
+background: var(--bs-border-color);
+}
+.timeline-item{
+    position: relative;
+}
+.timeline-item::before{
+content: "";
+position: absolute;
+left: 0;
+top: .4rem;
+width: .9rem;
+height: .9rem;
+border-radius: 50%;
+background: var(--bs-primary);
+box-shadow: 0 0 0 2px rgba(13, 110, 253, .15);
+}
+
+ 
+/* Normal tema */
+    body, html {
+      margin: 0;
+      padding: 0;
+      background-color: white;
+      color: black;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.4s, color 0.4s;
+    }
+
+    /* Karanlık tema tüm sayfa için */
+    .dark-mode {
+      background-color: #181818 !important;
+      color: #e0e0e0 !important;
+    }
+
+    /* Karanlık modda linkleri farklı göster */
+    .dark-mode a {
+      color: #80cbc4 !important;
+    }
+
+    /* Diğer tüm öğeler örn. header, footer vs. varsa karanlık arkaplan */
+    .dark-mode header, 
+    .dark-mode footer, 
+    .dark-mode section, 
+    .dark-mode article, 
+    .dark-mode div {
+      background-color: #282828 !important;
+      color: #ddd !important;
+      transition: background-color 0.4s, color 0.4s;
+    }
+
+    button {
+      margin: 20px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+ 

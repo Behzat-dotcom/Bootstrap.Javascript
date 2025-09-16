@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odeme Sayfasi</title>
+   <link rel="stylesheet" href="../CSS/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+ <style>
+    /* Küçük özelleştirmeler: kart köşe, hafif arka plan */
+    body { background:#f6f7f8; }
+    .card-rounded { border-radius:12px; }
+    .brand { font-weight:700; }
+    .sidebar .card { position:sticky; top:80px; } /* sağdaki özet sabit kalır */
+    .product-thumb { width:60px; height:60px; object-fit:cover; border-radius:6px; }
+    .muted-small { color:#6c757d; font-size:0.9rem; }
+  </style>
+</head>
+<body> 
+    <!-- NAVBAR-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand brand" href="#">Webigem Shop</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+              aria-controls="navMain" aria-expanded="false" aria-label="Menüyü aç/kapa">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" aria-current="page"   href="#">Sargyt</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Harytlar</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Aragatnaşyk</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SAYFA GÖVDESİ -->
+  <main class="container my-5">
+    <div class="row g-4">
+      <!-- SOL: Hesap ve Ödeme Formu -->
+      <div class="col-lg-7">
+        <div class="card card-rounded shadow-sm p-4">
+          <h5 class="mb-4">Hasap maglumaty</h5>
+
+          <form>
+            <!-- İsim soyisim satırı -->
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label class="form-label">Ady</label>
+                <input class="form-control" type="text" placeholder="Guwanç">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Familiýasy</label>
+                <input class="form-control" type="text" placeholder="A.">
+              </div>
+            </div>
+
+            <!-- E-posta ve Telefon -->
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label class="form-label">E-poçta</label>
+                <input class="form-control" type="email" placeholder="ady@example.com">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Telefon</label>
+                <input class="form-control" type="tel" placeholder="+993 XX XXX XX XX">
+              </div>
+            </div>
+
+            <!-- Adres -->
+            <div class="mb-3">
+              <label class="form-label">Salgy</label>
+              <input class="form-control" type="text" placeholder="Köçe, öý/jaý, gat...">
+            </div>
+
+            <!-- Şäher, Ýurt, Pochta -->
+            <div class="row g-3 mb-4">
+              <div class="col-md-4">
+                <label class="form-label">Şäher</label>
+                <input class="form-control" type="text">
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Ýurt</label>
+                <select class="form-select">
+                  <option selected>Saýla...</option>
+                  <option>Türkmenistan</option>
+                  <option>Türkiye</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Poçta kody</label>
+                <input class="form-control" type="text">
+              </div>
+            </div>
+
+            <hr>
+
+            <!-- TÖLEG USULY (Ödeme Yöntemi) -->
+            <h6 class="mb-3">Töleg usuly</h6>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="payMethod" id="card" checked>
+              <label class="form-check-label" for="card">Bank karty (Visa / MasterCard)</label>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="radio" name="payMethod" id="cash">
+              <label class="form-check-label" for="cash">Gelden-gelşe (gowşurylanda)</label>
+            </div>
+
+            <!-- Kart Bilgileri -->
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label class="form-label">Kartdaky at</label>
+                <input class="form-control" type="text" placeholder="ADY FAMILIÝASY">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Kart belgisi</label>
+                <input class="form-control" type="text" placeholder="4111 1111 1111 1111">
+              </div>
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-md-4">
+                <label class="form-label">Soňky möhleti (AA/YY)</label>
+                <input class="form-control" type="text" placeholder="08/27">
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">CVV</label>
+                <input class="form-control" type="password" placeholder="***">
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Töleg walýutasy</label>
+                <select class="form-select">
+                  <option selected>Saýla...</option>
+                  <option>TMT</option>
+                  <option>USD</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Promo ve şartlar -->
+            <div class="mb-3">
+              <label class="form-label">Promo kod barmy?</label>
+              <input class="form-control" type="text" placeholder="Promo kod">
+            </div>
+
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" id="agree">
+              <label class="form-check-label" for="agree">Şertler bilen ylalaşýaryn</label>
+            </div>
+
+            <!-- Onay butonu -->
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary btn-lg">Sargydy tassyklap tölä</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+      <!-- SAĞ: Sipariş Özeti -->
+      <div class="col-lg-5 sidebar">
+        <div class="card card-rounded shadow-sm p-3 mb-4">
+          <h6 class="mb-3">Sargyt gysgaça</h6>
+
+          <!-- Ürün 1 -->
+          <div class="d-flex align-items-center mb-3">
+            <img src="https://via.placeholder.com/60" alt="ürün" class="product-thumb me-3">
+            <div class="flex-grow-1">
+              <div class="fw-semibold">.NET MAUI Kitapçasy</div>
+              <div class="muted-small">Elektron görnüşi | 1 sany</div>
+            </div>
+            <div class="fw-bold">150 TMT</div>
+          </div>
+
+          <!-- Ürün 2 -->
+          <div class="d-flex align-items-center mb-3">
+            <img src="https://via.placeholder.com/60" alt="ürün" class="product-thumb me-3">
+            <div class="flex-grow-1">
+              <div class="fw-semibold">Klawiatūra PRO</div>
+              <div class="muted-small">Garantili | 1 sany</div>
+            </div>
+            <div class="fw-bold">420 TMT</div>
+          </div>
+
+          <hr>
+
+          <!-- Fiyat özeti -->
+          <div class="d-flex justify-content-between muted-small">
+            <div>Jemi arzanladyş</div><div>-20 TMT</div>
+          </div>
+          <div class="d-flex justify-content-between muted-small">
+            <div>Eltip bermek (kargo)</div><div>25 TMT</div>
+          </div>
+          <div class="d-flex justify-content-between muted-small">
+            <div>Salygt (KDV)</div><div>%%</div>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center mt-3">
+            <div class="fw-bold fs-5">JEMI</div>
+            <div class="fw-bold fs-5">575 TMT</div>
+          </div>
+
+          <div class="alert alert-info mt-3 mb-0 py-2">
+            <strong>Howpsuz töleg:</strong> Maglumatlar SSL arkaly şifrlenýär.
+          </div>
+        </div>
+
+        <!-- Kısa bilgi kartı (teslimat süresi) -->
+        <div class="card card-rounded shadow-sm p-3">
+          <h6>Eltip bermek wagty</h6>
+          <p class="mb-0 muted-small">Aşgabat üçin 1–2 iş günü, beýleki welaýatlar üçin 2–4 iş günü.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="text-center py-3 mt-5">
+    <small class="text-muted">© 2025 Webigem</small>
+  </footer>
+ 
+   <script src="../CSS/bootstrap.bundle.min.js"></script>
+</body>
+</html>

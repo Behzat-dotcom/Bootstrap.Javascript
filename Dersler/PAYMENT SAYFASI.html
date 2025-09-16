@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/bootstrap-icons.min.css">
+</head>
+<body>
+     <!--Nav Bölegi-->
+    <nav class="navbar navbar-expand-lg bg-white border-bottom">
+        <div class="container">
+            <a href="#" class="navbar-brand fw-bold">Webigem Shop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Sargyt</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Harytlar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Aragatnaşyk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Habarlaşmak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+
+
+    <!-- Main Content -->
+     <main class="container my-5">
+        <div class="row g-4">
+            <!--Left Billing Payment-->
+            <div class="col-lg-7">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <h4 class="mb-3">Hasap Maglumatlary</h4>
+                        <form action="#" class="needs-validation" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="" class="form-label">Ady</label>
+                                    <input type="text" class="form-control" id="" required placeholder="Guwanç...">
+                                    <div class="invalid-feedback">
+                                        Ady giriziň.
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="" class="form-label">Familiýa</label>
+                                    <input type="text" class="form-control" id="" required placeholder="Yazgulyyew...">
+                                    <div class="invalid-feedback">
+                                        Familiýa giriziň.
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label for="" class="form-label">E Poçta</label>
+                                    <input type="text" class="form-control" id="" required placeholder="mr.@gmail.com">
+                                    <div class="invalid-feedback">
+                                        E Poçta giriziň.
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label for="" class="form-label">Telefon</label>
+                                    <input type="text" class="form-control" id="" required placeholder="+993 XX XXX XX XX">
+                                    <div class="invalid-feedback">
+                                        Telefon giriziň.
+                                    </div>
+                                </div>
+                                
+
+                                 <div class="col-12">
+                                    <label for="" class="form-label">Salgy</label>
+                                    <input type="text" class="form-control" id="" required placeholder="Salgy giriziň...">
+                                    <div class="invalid-feedback">
+                                        Salgy giriziň.
+                                    </div>
+                                </div>
+
+                                   <div class="col-md-6">
+                                    <label for="" class="form-label">Şaher</label>
+                                    <input type="text" class="form-control" id="" required placeholder="Şaheri giriziň...">
+                                    <div class="invalid-feedback">
+                                        Şaheri giriziň.
+                                    </div>
+                                </div>
+
+                                
+                                 <div class="col-md-3">
+                                    <label for="" class="form-label">Yurtlar</label>
+                                   <select name="" class="form-select" id="">
+                                       <option value="">Saýlaň...</option>
+                                       <option value="1">Türkmenistan</option>
+                                       <option value="2">Türkiye</option>
+                                       <option value="3">ABŞ</option>
+                                       <option value="4">Rusya</option>
+                                   </select>
+                                    <div class="invalid-feedback">
+                                        Yurtlary giriziň.
+                                    </div>
+                                </div>
+
+                                   <div class="col-md-3">
+                                    <label for="" class="form-label">Poçta Kody</label>
+                                    <input type="text" class="form-control" id="" required placeholder="TKM 0055614">
+                                    <div class="invalid-feedback">
+                                        Poçta kody giriziň.
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <hr class="my-4">
+                            <h5 class="mb-3">Töleg Usullary</h5>
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input type="radio" name="payment" id="payCard" class="form-check-input" checked required>
+                                        <label for="payCard" class="form-check-label">Bank karty (Visa, MasterCard)</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" name="payment" id="payCod" class="form-check-input" required>
+                                        <label for="payCod" class="form-check-label">Elden Nagt (Gowşurulanda)</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="" class="form-label">Kartdaky Ad</label>
+                                    <input type="text" class="form-control" id="" required placeholder="Kartdaky Ad giriziň...">
+                                    <div class="invalid-feedback">
+                                        Kartdaky Ad giriziň.
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label for="" class="form-label">Kartdaky belgi</label>
+                                    <input type="text" class="form-control" id="" required placeholder="Kartdaky belgi giriziň...">
+                                    <div class="invalid-feedback">
+                                        Kartdaky belgi giriziň.
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="" class="form-label">Kartdaky Möhleti (AA/YY)</label>
+                                    <input type="text" class="form-control" id="" required placeholder="Kartdaky möhletini giriziň...">
+                                    <div class="invalid-feedback">
+                                        Kartdaky möhletini giriziň.
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-4">
+                                    <label for="" class="form-label">CVV</label>
+                                    <input type="text" class="form-control" id="" required placeholder="CVV giriziň...">
+                                    <div class="invalid-feedback">
+                                        CVV giriziň.
+                                    </div>
+                                </div>
+                                    <div class="col-md-4">
+                                    <label for="" class="form-label">Töleg Walyutasy</label>
+                                   <select name="" class="form-select" id="">
+                                       <option value="">Saýlaň...</option>
+                                       <option value="1">TMT</option>
+                                       <option value="2">TRY</option>
+                                       <option value="3">USD</option>
+                                       <option value="4">RUB</option>
+                                   </select>
+                                    <div class="invalid-feedback">
+                                        Walyutany giriziň.
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <!--Promo Kod-->
+                            <div class="accordion my-4" id="promo">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#promoBody">
+                                            Promo Kod Barmy ?
+                                        </button>
+                                    </h2>
+                                    <div class="accordion-collapse collapse" id="promoBody" data-bs-parent="#promo">
+                                        <div class="accordion-body">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="Promo kod giriziň...">
+                                                <button class="btn btn-primary" type="button">Ulan</button>
+                                            </div>
+                                            <small class="text-muted">Promo koduňyzy giriziň we "Ulan" düwmesine basyň.</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input type="checkbox" class="form-check-input" id="terms" required>
+                                <label class="form-check-label" for="terms">
+                                    <span class="me-2">Şertler we düzgünlik bilen ylalaşýaryn</span>
+                                    <span class="badge bg-success badge-brand rounded-pill">Şertleri okadym</span>
+                                </label>
+                                <div class="invalid-feedback">
+                                    Şertleri kabul etmeli.
+                                </div>
+                            </div>
+
+                            <button class="btn btn-success btn-lg w-100" type="submit">Töleg Et</button>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--Right Order Summary-->
+            <div class="col-lg-5">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <h4 class="mb-3">Sargyt Barada</h4>
+
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://picsum.photos/seed/mawi/64/64" alt="Haryt Ady" class="rounded me-3">
+                            <div class="flex-grow-1">
+                                <div class="fw-semibold">.NET MAUI Kitapçasy</div>
+                                <small class="text-muted">Mobil öwrenmannin ansat  yoly.</small>
+
+                            </div>
+                            <div class="fw-semibold">350 TMT</div>
+                        </div>
+
+                          <div class="d-flex align-items-center mb-3">
+                            <img src="https://picsum.photos/seed/mawi/64/64" alt="Haryt Ady" class="rounded me-3">
+                            <div class="flex-grow-1">
+                                <div class="fw-semibold">Javascript Kursy</div>
+                                <small class="text-muted">Kod öwrenmannin ansat  yoly.</small>
+
+                            </div>
+                            <div class="fw-semibold">450 TMT</div>
+                        </div>
+
+                        <hr>
+                        <div class="d-flex justify-content-between">
+                            <span>Jemi Arzanladyş</span>
+                            <span class="text-success">-100 TMT</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span>Eltip bermek (Kargo)</span>
+                            <span class="fw-bold">30 TMT</span>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <span>Salgyt</span>
+                        <span class="fw-bold">3%</span>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between fs-5 fw-bold mt-3">
+                        <span>Jemi</span>
+                        <span class="fw-bold">630 TMT</span>
+                    </div>
+                    <div class="alert alert-info mt-4 mb-0">
+                    <strong>Howpsuz töleg:</strong> Maglumatlar SSL arkaly şifrlenýär.
+                    </div>
+
+                </div>
+            </div>
+            <!--Eltip berme Wagty-->
+        </div>
+     </main>
+
+     <script src="../Bootstrap3/bootstrap.bundle.min.js"></script>
+
+    <form id="paymentForm">
+  <!-- form alanları -->
+  <input type="text" id="ady" placeholder="Ady" />
+  <input type="text" id="familiyasy" placeholder="Familiýasy" />
+  <!-- diğer alanlar -->
+  <button type="submit">Sargydy tassyklap tölä</button>
+</form>
+
+<script>
+  document.getElementById('paymentForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Formun otomatik submit olmasını engelle
+    let isValid = true;
+
+    // Gerekli alanlar
+    const fields = ['ady', 'familiyasy', 'email', 'telefon', 'salgysy', 'saher', 'yurt', 'poctaKody'];
+
+    fields.forEach(function(id) {
+      const input = document.getElementById(id);
+      if(!input.value.trim()) {
+        isValid = false;
+        input.style.border = '2px solid red'; // Kırmızı kenarlık ekle
+      } else {
+        input.style.border = ''; // Kenarlığı temizle
+      }
+    });
+
+    if(isValid) {
+      // Form geçerli, ödeme işlemini yap
+      this.submit();  // İsterseniz burada formu gönderebilirsiniz
+    } else {
+      alert('Lütfen tüm gerekli alanları doldurun!');
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="tk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- AŞAMA 1: Gurşadyş & Konteýner Synyplary -->
+  <!-- CDN arkaly Bootstrap goşmak -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- NPM arkaly goşmak isleseňiz:
+       npm install bootstrap@5
+       import 'bootstrap/dist/css/bootstrap.min.css';
+  -->
+  <title>Bootstrap Detallı Sapagy</title>
+</head>
+<body class="bg-light text-dark">
+
+  <!-- AŞAMA 1: Gurşadyş & Konteýner Synyplary -->
+  <section class="container my-5">
+    <h2 class="display-6 mb-4">1. Gurşadyş &amp; Konteýner Synyplary</h2>
+
+    <!-- .container (sabit maks. giňlik, ortalanan) -->
+    <div class="container border rounded p-3 mb-3">
+      <h3 class="h5">.container</h3>
+      <p>Ekranyň giňligine görä çäklendirilip, ortalanan konteýner.</p>
+    </div>
+
+    <!-- .container-sm (576px-dan uly ekranda çäklendirilýär) -->
+    <div class="container-sm border rounded p-3 mb-3">
+      <h3 class="h5">.container-sm</h3>
+      <p>576px-dan kiçi ekranda doly giňlik, ondan ulyda çäklendirilýär.</p>
+    </div>
+
+    <!-- .container-xxl (1400px+ ekranda çäklendirilýär) -->
+    <div class="container-xxl border rounded p-3">
+      <h3 class="h5">.container-xxl</h3>
+      <p>1400px we ondan uly ekranda sabit maks. giňlik, kiçi ekranda doly giňlik.</p>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- AŞAMA 2: Tor Ulgamy -->
+  <section class="container my-5">
+    <h2 class="display-6 mb-4">2. Tor Ulgamy</h2>
+
+    <!-- Barabar Sütunlar -->
+    <div class="row mb-4">
+      <div class="col border py-3 text-center">.col</div>
+      <div class="col border py-3 text-center">.col</div>
+      <div class="col border py-3 text-center">.col</div>
+    </div>
+
+    <!-- Responsiw Kolonlar: sm, md, lg -->
+    <div class="row mb-4">
+      <div class="col-sm-6 col-md-4 border py-3 text-center">.col-sm-6 .col-md-4</div>
+      <div class="col-sm-6 col-md-8 border py-3 text-center">.col-sm-6 .col-md-8</div>
+    </div>
+
+    <!-- Ofset we Orden: ms-auto, order-md-last -->
+    <div class="row mb-4">
+      <div class="col-4 border py-3 text-center">.col-4</div>
+      <div class="col-4 border py-3 text-center ms-auto">.col-4 ms-auto</div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 order-md-last border py-3 text-center">order-md-last</div>
+      <div class="col-md-4 border py-3 text-center">normal</div>
+    </div>
+
+    <!-- Tor içine tor (nested grid) -->
+    <div class="row mt-4">
+      <div class="col border p-3">
+        .col içinde row
+        <div class="row mt-2">
+          <div class="col-6 border py-2 text-center">.col-6</div>
+          <div class="col-6 border py-2 text-center">.col-6</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- AŞAMA 3: Tipografiýa & Metin Kömekçi Synyplary -->
+  <section class="container my-5">
+    <h2 class="display-6 mb-4">3. Tipografiýa &amp; Metin Kömekçi Synyplary</h2>
+
+    <!-- Başlyklar we kiçi ýazgy -->
+    <h1>Başlyk 1</h1>
+    <h2>Başlyk 2</h2>
+    <h3>Başlyk 3</h3>
+    <p class="small">Kiçi ýazgygyndaky tekst</p>
+
+    <!-- “Lead” synpy -->
+    <p class="lead">Bu tekst “lead” sinpy bilen tapawutlandyryldy: has uly we gözüňi çekýär.</p>
+
+    <!-- Blokçot we käbir inline elementler -->
+    <blockquote class="blockquote">
+      <p class="mb-0">Bu, blokçot synpy mysaly — iňňän ähmiýetli sitata laýyk.</p>
+      <footer class="blockquote-footer">Bootstrap <cite title="Bootstrap">Resmi Dokumentasiýa</cite></footer>
+    </blockquote>
+
+    <p>Tekstiň içinde <code>&lt;code&gt;</code> we <kbd>Ctrl + C</kbd> elementleriň ulanylyşy.</p>
+    <p><mark>Belgilenen</mark> tekst mysaly, we <abbr title="kurtyna">abbr</abbr> synpy.</p>
+
+    <!-- Ýazgy sanawlary -->
+    <ul class="list-unstyled">
+      <li>• list-unstyled — sanaw nokatsyz</li>
+      <li>• list-inline — sanawy bir setirde görkez</li>
+    </ul>
+    <ul class="list-inline">
+      <li class="list-inline-item">list-inline-item 1</li>
+      <li class="list-inline-item">list-inline-item 2</li>
+      <li class="list-inline-item">list-inline-item 3</li>
+    </ul>
+
+    <!-- Metin kömekçi sinplar -->
+    <p class="text-muted">.text-muted — soluk reňkli tekst</p>
+    <p class="text-primary">.text-primary — esasy reňkli tekst</p>
+    <p class="text-center">.text-center — ortalanan tekst</p>
+    <p class="text-wrap">.text-wrap — sytaratly ýazgy</p>
+    <p class="text-break">.text-break — uzyn sözü bölüp geçir</p>
+
+    <!-- Ýazygy çäklendirmek -->
+    <div class="w-50 text-truncate border p-2">
+      Bu juda uzak tekst; text-truncate synpy bilen çäklendirilen we: …
+    </div>
+
+    <!-- Font stili -->
+    <p class="fw-bold">.fw-bold — galyň şrift</p>
+    <p class="fw-light">.fw-light — ýumşak şrift</p>
+    <p class="fst-italic">.fst-italic — italik şrift</p>
+  </section>
+
+  <!-- Bootstrap JS Bundle (hökman däl) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

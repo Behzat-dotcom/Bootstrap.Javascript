@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+header{
+    background-color: #0056b3;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+header h1{
+    font-size: 2em;
+}
+nav{
+    background-color: #004494;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    
+}
+
+nav ul li{
+    margin: 0 15px;
+}
+
+nav ul li a{
+    color:  white;
+    text-decoration: none;
+    padding: 10px 5px;
+    display: block;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover{
+    background-color: #003366;
+    border-radius: 5px;
+}
+
+main{
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+.contact-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.contact-form, .contact-info{
+background-color: #fff;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+flex: 1 1 400px;
+}
+
+
+.contact-form h2, .contact-info h2{
+    margin-bottom: 15px;
+    color: #0056b3;
+}
+.contact-form label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bolder;
+}
+.contact-form input, .contact-form textarea{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+
+}
+
+.contact-form  textarea{
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form button{
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    cursor: pointer !important;
+    transition: background 0.3s;
+}
+.contact-form button:hover{
+    background-color: #004494;
+}
+
+.contact-info p{
+    margin-bottom: 10px;
+}
+.contact-info strong{
+    display: inline-block;
+    width: 80px;
+}
+
+.map{
+    margin-top: 20px;
+    width: 100% ;
+    height: 300px;
+    background-color: #e1e1e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 1.2rem;
+    border-radius: 8px;
+}
+
+footer{
+    text-align: center;
+    padding: 15px 0;
+    background: #0056b3;
+    color: white;
+    margin-top: 40px;
+}

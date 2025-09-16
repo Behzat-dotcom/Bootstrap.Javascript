@@ -1,0 +1,63 @@
+  *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+     }   
+     header h1{
+        background-color: blue;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 20px;
+        color: white;
+        padding-top:15px;
+        padding-left: 15px;
+        height: 20px;
+       
+
+     }
+div h2{
+   display: flex;
+   justify-content: center;
+   text-decoration: double;
+   padding-top: 50px;
+   
+
+}
+div p{
+   display: flex;
+   justify-content: center;
+}
+nav{
+   background-color: blue;
+}
+
+nav ul{
+   display: flex;
+   justify-content:right;
+   list-style: none;
+ 
+}
+
+nav ul li{
+   padding-bottom:15px;
+   padding-top: 0px;
+   margin: 0 15px;
+   display:flex;
+   justify-content:right;
+}
+
+nav ul li a{
+   color: white;
+   text-decoration:none;
+   padding: 5 10px;
+   display:block;
+   position: relative;
+}
+
+nav ul li a:hover{
+   color:brown;
+   border-radius: 5px;
+   
+   text-decoration:underline ;
+   padding-top: 0.3sm;
+   transition:inherit;x
+}
