@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vergi Hesaplama</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 60px;
+    }
+    h2 { color: #333; }
+    .box {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+    input, select, button {
+      margin: 8px 0;
+      padding: 8px;
+      font-size: 16px;
+      width: 200px;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 8px;
+      width: 220px;
+      text-align: center;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+    <h2>💰 Vergi Hesaplayıcı</h2>
+  <div class="box">
+    <input type="text" id="price" placeholder="Fiyat girin">
+    <select id="tax">
+      <option value="1">KDV %1</option>
+      <option value="8">KDV %8</option>
+      <option value="18" selected>KDV %18</option>
+      <option value="20">KDV %20</option>
+    </select>
+    <button id="hesapla">Hesapla</button>
+    <pre id="resultData">Sonuç burada...</pre>
+  </div>
+
+  <script>
+    const el = s => document.querySelector(s);
+
+    const toNum = s => {
+      const n = toNumberString(s);
+      return Number.isFinite(n) ? n : NaN;
+    }
+
+    function toNumberString(a){
+      if(typeof a!=="string") return Number(a);
+      const t = a.trim().replace(",",".");
+      return t===""? NaN : Number(t);
+    }
+
+    el("#hesapla").addEventListener("click", () => {
+      const price = toNum(el("#price").value);
+      const tax = toNum(el("#tax").value);
+
+      if(!Number.isFinite(price) || price <= 0) {
+        el("#resultData").textContent = "⚠️ Geçerli bir fiyat girin!";
+        return;
+      }
+
+      const taxAmount = price * tax / 100;
+      const total = price + taxAmount;
+
+      el("#resultData").textContent =
+        `Fiyat: ${price.toFixed(2)} ₺\nVergi (%${tax}): ${taxAmount.toFixed(2)} ₺\nToplam: ${total.toFixed(2)} ₺`;
+    });
+  </script>
+</body>
+</html>

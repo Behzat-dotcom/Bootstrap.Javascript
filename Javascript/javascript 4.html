@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="price" placeholder="baha girin!!!">
+    <input type="text" id="tax" value="20">
+    <button id="hesapla"> Hesapla</button>
+    <pre id="resultData"></pre>
+
+    <script>
+       
+       const el=(s)=>document.querySelector(s);
+        const toNum=(s)=>{
+            const n=toNumberString(s);
+            return Number.isFinite(n) ? n : NaN;
+        }
+
+        function toNumberString(a){
+            if(typeof a!=="string") return Number(a);
+            const t=a.trim().replace(",",".");
+            return t===""? NaN : Number(a);
+        }
+
+        el("#hesapla").addEventListener("click", ()=>{
+            const price=toNum(el("#price").value); // inputdan gelen data elimizde
+            const tax=toNum (el("#tax").value); //inputdan gelen data elimizde
+            if(!Number.isFinite(price) || !Number.isFinite(tax)) {
+                el("#resultData").textContent="Geçererli sayı yaz";
+                return;
+            }
+            const taxSummery=price * tax/100;
+            const total=price + taxSummery;
+            el("#resultData").textContent=`VERGI ${taxSummery.toFixed(2)} | Toplam: ${total.toFixed(2)}`;
+        }
+
+        );
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       var a =20.02;
+        console.log(toNumberString(a));
+        function toNumberString(a){
+            if (typeof a!=="String") return Number(a);
+            const t=a.trim().replace (",",".");
+            return t===""? NaN : Number(a);
+        }
+
+        var v=8;
+        console.log(toBool(v));
+        function toBool (V){
+            if (typeof v==="boolean") return V;
+            if (typeof v!=="string") return Boolean (v);
+            const t=v.trim().toLowerCase();
+            return t==="true" || t==="1" || t==="on" || t==="yes";
+        
+        }
+
+        const toplam={
+            value:10,
+            [Symbol.toPrimitive](hint){
+                return hint==="string" ? `toplam:${this.value}` : this.value;
+            }
+
+        }
+        console.log(toplam+5);
+        console.log(String(toplam));
+    </script>
+</body>
+</html>
