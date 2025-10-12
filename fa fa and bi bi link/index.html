@@ -4,13 +4,205 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body>
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <p> FONT AWESOME LINK</p>
-    
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-      
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">BEGZAT HALMOMINOV</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="#">Baş sahypa</a></li>
+        <li class="nav-item"><a class="nav-link" href="#Hyzmat">Hyzmatlar</a></li>
+        <li class="nav-item"><a class="nav-link" href="#bahalar">Bahalar</a></li>
+        <li class="nav-item"><a class="nav-link" href="#soraglar">Soraglar</a></li>
+        <li class="nav-item"><a class="nav-link" href="#habarlasmak">Habarlaşmak</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="bg-primary text-white text-center py-5">
+  <div class="container">
+    <h1 class="fw-bold">Göçmez mülk hyzmatlary – öýleriň we ofisleriň täze dünýäsi</h1>
+    <p class="lead">BEGZAT HALMOMINOV bilen arzuwyňyzdaky öýe golaýlaşyň!.</p>
+    <a href="#fakultet" class="btn btn-light btn-lg mt-3">Hyzmatlarymyzy Gör</a>
+  </div>
+</section>
+
+<!-- Aýratynlyklar -->
+<section id="Hyzmat" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Hyzmatlar</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">Göçmez mülk hyzmatlary</h5>
+            <p class="card-text">Öýleriň we ofisleriň göçürilmegi boýunça hünärmenler.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">Alyş-Satyş hyzmatlary</h5>
+            <p class="card-text"> Öylerin ve ofisleriň Alyş-Satyşy sizin üçin in yokary derejesinde amala aşyrylýar.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body text-center">
+            <h5 class="card-title">Rayatlara öý hyzmatlary</h5>
+            <p class="card-text"> Rayatlara öylerini ve ofislerini göçürmek boyunça yokary derejeli hyzmatlar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bahalar -->
+<section id="bahalar" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Bahalar</h2>
+    <div class="row g-4 text-center">
+      <div class="col-md-4">
+        <div class="card border-primary shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Taze Jaý</h5>
+            <p class="display-6 fw-bold">75-100 TMT</p>
+            <p>Öýüňiziň täze görnüşi üçin iň gowy bahalar.</p>
+            <a href="#" class="btn btn-primary w-100">Başla</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-success shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Kwartira</h5>
+            <p class="display-6 fw-bold">15-25TMT</p>
+            <p>In amatly bahalar.</p>
+            <a href="#" class="btn btn-success w-100">Başla</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-dark shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Göçürmek</h5>
+            <p class="display-6 fw-bold">10-15 TMT</p>
+            <p>Yokary derejeli hyzmatlar.</p>
+            <a href="#" class="btn btn-dark w-100">Başla</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Soraglar -->
+<section id="soraglar" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Köpelenç soralýan soraglar</h2>
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#s1">
+            Jay Töleg Usullary nahili?
+          </button>
+        </h2>
+        <div id="s1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">Nagt hem-de onlaýn töleg usullary arkaly töleg edip bilersiňiz.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s2">
+             Yaşayyş şertleri nahili?
+          </button>
+        </h2>
+        <div id="s2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">Bizde ýaşaýyş şertleri amatly we elýeterlidir.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s3">
+             Nahili resminamalar gerek?
+          </button>
+        </h2>
+        <div id="s3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">Sizden dineje rayat pasporty talap edilýär.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Habarlaşmak -->
+<section id="habarlasmak" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Habarlaşmak</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Adyňyz</label>
+            <input type="text" class="form-control" required>
+            <div class="invalid-feedback" style="display:none;">Bu meýdan boş bolup bilmez></div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">E-poçta</label>
+            <input type="email" class="form-control" required>
+            <div class="invalid-feedback" style="display:none;">Bu meýdan boş bolup bilmez></div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Tema</label>
+            <input type="text" class="form-control">
+             <div class="invalid-feedback" style="display:none;">Bu meýdan boş bolup bilmez></div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Hatyňyz</label>
+            <textarea class="form-control" rows="4" required></textarea>
+            <div class="invalid-feedback" style="display:none;">Bu meýdan boş bolup bilmez></div>
+          </div>
+          <button type="submit" class="btn btn-primary">Ugrat</button>
+        </form>
+      </div>
+     <div class="col-lg-5">
+            <div class="card shadow-sm bg-light h-100">
+              <div class="card-body">
+                <h5 class="card-title fw-semibold">Adres & Maglumat</h5>
+                <p class="text-muted mb-1"><strong>Yerleşim yeri</strong>Koytendag Lebap Türkmenistan</p>
+                <p class="text-muted mb-1"><strong>E-poçta:</strong>halmominowbegzat10@gmail.com</p>
+                <p class="text-muted mb-1"><strong>Işgär wagty:</strong> Duş — Jem, 09:00 — 18:00</p>
+                <p class="text-muted mb-1"><strong>Telefon:</strong>+905397450854</p>
+
+                <div class="ratio ratio-16x9 d-flex align-items-center justify-content-center text-muted bg-white">
+                     <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d5657155.273473056!2d60.82827961160805!3d39.00258815332156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzfCsDMwJzUxLjQiTiA2NsKwMDEnMDguNSJF!5e0!3m2!1sru!2str!4v1758842386948!5m2!1sru!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div> <!-- col -->
+        </div> <!-- row -->
+      </div> 
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+  <p class="mb-0">© 2025 BEGZAT HALMOMINOV. Ähli hukuklar goralan.</p>
+</footer>
+
+ 
+<script src="../CSS/bootstrap.bundle.min.js"></script>
 </body>
 </html>

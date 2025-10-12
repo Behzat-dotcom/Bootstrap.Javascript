@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 2</title>
+</head>
+<body>
+    <script>
+       console.log("Begzat");
+       function demo() {
+       //console.log(a);
+        var a=5;
+        let b=10;
+        {
+            var c=13;
+            let d=15;
+        }
+        console.log(c);
+        //console.log(d);
+       }
+ demo();
+
+       var loggerV=[];
+       for (var a=0; a<6; a++) loggerV.push(()=>console.log(a));
+       loggerV.forEach(a=>a());
+
+       let loggerL=[];
+       for (let b=0; b<7; b++) loggerL.push(()=>console.log(b));
+       loggerL.forEach(b=>b());
+
+       const user={Ady:"Begzat", familya:"Halmominow", yash:23, yeri:"Koytendag"};
+       console.log(user);
+       user.Ady="Bega";
+       user.yash=24;
+       console.log(user);
+
+       Object.freeze(user);
+      // Object.freeze(user);
+
+      let m=5;
+      let n=m
+      n++
+      console.log(m,n);
+
+      const beg={x:2};
+      const bega=beg
+      bega.x=55;
+      console.log(beg.x);
+
+      const ID= Symbol("ID");
+      const user2={ ady:"Bega", [ID]:854};
+      console.log(user2);
+      console.log(Object.keys (user2));
+      console.log(Object.getOwnPropertySymbols (user2));
+
+      var h=539;
+      console.log(h);
+      var j=(540).toString();
+      console.log(String(540));
+
+      Boolean("0");
+      Boolean(1);
+      Boolean(0);
+
+      5=="5"// true
+      5==="5"//false
+
+      null==undefined// true
+      null===undefined// false
+    </script>
+
+
+</body>
+</html>
