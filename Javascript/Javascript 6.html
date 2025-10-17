@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 6</title>
+</head>
+<body>
+    <script>
+        getrememberMe();
+        function setrememberMe(remember){
+            localstroge.setItem("remember",JSON.sringtify(Boolean(remember))); 
+        }
+        function getrememberMe(){
+            return JSON.parse(localStorage.getItem ("remember") ?? "false");
+        }
+
+        // If / else if/ else
+
+        function saveData(form){
+            const ad= form.ad.value.trim();
+            if(ad==="")
+            return errorData("Ad Bosh Bolmaly Dal!!!");
+            if(ad.length<3)
+            return errorData("Ad Ady Gysga!!!"); //Guard Clause
+        successData("Maglumat Goshuldy!"); //Guard Clause
+        }
+
+        // switch bu aslinda stabil bir data bardyr, we shol datalara gore shertlerimizi ulanyaryz.
+      //  const rol="admin"
+       // switch(rol){
+         //   case "superaAdmin":
+         //       case "admin":
+          //          yetkiBer(true); break;
+          //      case "user":
+          //          yetkiBer(false); break;
+           //     default:
+           //         yalnyshRol();
+          //          console.log(rol);
+    //    }
+
+        // Mysal
+        const point=85;
+        const degree=(function(){
+            switch(true){
+                case point>=85:
+                    return "Perfect";
+                case point>=70:
+                    return "Good";
+                case point>=50:
+                    return "Not Bad";
+                default:
+                    return "Not Passed";
+            }
+        })();
+
+
+        // lookup object
+       // const messageObj={
+          //  tr:"Merhaba", tkm:"Salam", en:"Hello"
+      //  }[dil] ?? "Salam";
+       // console.log(messageObj);
+
+        // for sanawy belli bolsa ulanylyar.
+        for(let i=0; i<5; i++)
+        console.log(i);
+
+        // while koşul sağladıkça
+        let n=6
+        while(n--)
+        console.log("Gelen San!", n);
+
+        // do while bu in az bir gezek ishleyar
+        let p=0
+        do{p++} while(p<1);
+        console.log(p);
+    </script>
+</body>
+</html>
