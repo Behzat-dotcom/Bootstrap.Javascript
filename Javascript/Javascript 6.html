@@ -9,10 +9,10 @@
     <script>
         getrememberMe();
         function setrememberMe(remember){
-            localStorage.setItem("remember",JSON.stringtify(Boolean(remember))); 
+            localStorage.setItem("remember",JSON.stringify(Boolean(remember))); 
         }
         function getrememberMe(){
-            return JSON.parse(localStorage.getItem ("remember") ?? "false");
+            return JSON.parse(localStorage.getItem ("remember") || "false");
         }
 
         // If / else if/ else
