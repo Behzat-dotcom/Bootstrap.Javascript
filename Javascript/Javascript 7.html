@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 7</title>
+</head>
+<body>
+    <center>
+        <h3>Form Validation (Guard + if / else)</h3>
+        <br>
+        <form id="f">
+            <input  name="ad" placeholder="Ad Yazyn...">
+             <input  name="email" placeholder="Elektron Pochta...">
+              <input  name="yash" placeholder="Yash.../">
+              <button style="background-color: blue; border-radius: 15px;">Gonder</button>
+        <br>
+        <p id="message"></p>
+            </form>
+    </center>
+    
+    <script>
+       const f=document.querySelector("#f");
+       const message=document.querySelector("#message")
+
+       f.addEventListener("submit",(e)=>{
+        e.preventDefault();
+        const ad=f.ad.value.trim();
+         const email=f.email.value.trim();
+          const yash=Number(f.yash.value);
+
+          if(!ad) return yaz("Ad Bosh Bolmaz!");
+          if(!email) return yaz ("Elektron Pochta bosh bolmalydal!");
+          if(!email.includes("@")) return yaz ("Elektron Pochta formatynda bolmaly!");
+          if(!Number.isFinite(yash) || yash<0) return yaz ("Yash Gechersiz!");
+
+          yaz ("Veriler Gonderildi!!!", true);
+
+    
+       });
+
+       function yaz (t,ok=false){
+        message.textContent=t;
+        message.style.color=ok ? "green": "crimson";
+       }
+       
+       
+       
+
+       const user = { name: "Ali", age: 25, city: "İstanbul" };
+
+     for (let key in user) {
+     console.log(key, ":", user[key]);
+   }
+
+   const numbers = [10, 20, 30];
+
+for (let num of numbers) {
+  console.log(num);
+}
+
+
+for (let char of "HELLO") {
+  console.log(char);
+}
+
+const arr = [1, 2, 3, 4, 5];
+
+arr.forEach(x => console.log(x)); // Hepsini yazar
+const kareler = arr.map(x => x * x);
+console.log(kareler); // [1,4,9,16,25]
+
+
+async function showData() {
+  const urls = ["data1.json", "data2.json"];
+  for await (let url of urls) {
+    console.log("Veri çekiliyor:", url);
+  }
+}
+
+
+// for of (iterable)
+// name iş eder. List, String, MAP, set, NodeList buların üstü bile datalar dönerç
+// webde Nodelist (queryselectorAll)cbilen gezmek idealdyr.
+
+for (const el of document.querySelectorAll(".item")){
+    el.classlist.add("tayyar.");
+}
+ // index de islesek
+
+ const array=["A","B","C"];
+ for (const[i,val] of arr.entries())
+ console.log(i,val);
+
+ // for in
+ // name ish eder? List inde datalaryn tertibinin garantiyasyny yok.
+ // Security gornushinde gezer.
+ const o=Object.create({miras:1});
+ o.ozi=2;
+ for (const k in o){
+    if (Object.hasOwn(o,k)){
+        console.log(k,o[k]);
+    }
+ }
+
+
+    </script>
+</body>
+</html>
