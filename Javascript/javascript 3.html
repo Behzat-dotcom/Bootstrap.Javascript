@@ -8,84 +8,121 @@
 <body>
     <script>
     
-      const user={ady:"Begzat", familya:"Halmominow", yash:23, yeri:"Koytendag"};
+      console.log("=== 🧩 1️⃣ Nesne Tanımı (Object) ===");
 
-      if (user.ady=="Begzat" && user.yeri=="Mary");
-      console.log (user);
+const user = {
+  ady: "Begzat",
+  familya: "Halmominow",
+  yash: 23,
+  yeri: "Koytendag"
+};
+console.log("Kullanıcı:", user);
 
-      if (user.familya=="Halmominovich" || user.yash==23);
-      console.log(user);
+console.log("\n=== 🧠 2️⃣ Mantıksal Operatörler (&& ve ||) ===");
 
-      if (user.ady=="Begzat" && user.familya=="Halmominov" || user.yash==25 || user.yash==23)
-      console.log(user)
-      
-      else
-       {console.log("Information is not found") }
+// && → "ve" anlamındadır, her iki koşul da doğru olmalı
+// || → "veya" anlamındadır, en az biri doğruysa yeterli
 
-   if (user.ady=="Begzat" && user.familya=="Halmominovich" || user.yash==25 || user.yash==24)
-      console.log(user)
-      
-      else
-       {console.log("Information is not found") }
+if (user.ady == "Begzat" && user.yeri == "Mary") {
+  console.log("İlk koşul: Eşleşti ✅");
+} else {
+  console.log("İlk koşul: Eşleşmedi ❌");
+}
 
-       const sanaw=undefined
-       console.log(sanaw ?? 33);
-       console.log(sanaw || 1);
+if (user.familya == "Halmominovich" || user.yash == 23) {
+  console.log("İkinci koşul: Eşleşti ✅ (çünkü yaş 23)");
+}
 
-        const saher=user?.ady?.no?? "No data";
-        console.log(saher);
+if (user.ady == "Begzat" && user.familya == "Halmominov" || user.yash == 25 || user.yash == 23) {
+  // && önce çalışır, sonra || kontrol edilir
+  console.log("Üçüncü koşul: Eşleşti ✅ (yaş 23 olduğu için)");
+} else {
+  console.log("Üçüncü koşul: Eşleşmedi ❌");
+}
 
-        const bal=10;
-        const durumu=bal>=85 ? "Has Gowy":
-        bal>=70 ? "Gowy":
-        bal>=50 ? "Kanagatlanarly": "Gechmedi" ;
-        console.log(durumu);
+if (user.ady == "Begzat" && user.familya == "Halmominovich" || user.yash == 25 || user.yash == 24) {
+  console.log("Dördüncü koşul: Eşleşti ✅");
+} else {
+  console.log("Dördüncü koşul: Eşleşmedi ❌");
+}
 
-      const ball=55
-      if(ball>=85){
-        console.log("Has Gowy");
-      } else if(ball>=70){
-        console.log("Gowy");
-      } else if(ball>=50){
-        console.log("Kanagatlanarly");
-      } else {
-        console.log("Gechmedi");
-      }
+console.log("\n=== ⚙️ 3️⃣ Nullish (??) ve OR (||) Operatörleri ===");
 
-      const kod = "+7";  
-        if (kod === "+993") {
-        console.log("TM"); 
-        } else if (kod === "+90") {
-        console.log("TR"); 
-        } else if (kod === "+7") {
-        console.log("RU"); 
-        } else if (kod === "+1") {
-        console.log("US"); 
-        } else if (kod === "+44") {
-        console.log("UK"); 
-        } else {
-        console.log("Bilinmeyen ülke kodu");
-        }
+const sanaw = undefined;
+console.log("sanaw ?? 33 =", sanaw ?? 33); // ?? sadece null veya undefined olunca devreye girer
+console.log("sanaw || 1 =", sanaw || 1);   // || herhangi bir "falsey" değerde (örnek: 0, '', null, undefined, false) devreye girer
 
-        const devlet = "Amerika";  
-            if (devlet === "Türkmenistan") {
-            console.log("Orta Asya");
-            } else if (devlet === "Türkiye") {
-            console.log("Avrupa / Asya");
-            } else if (devlet === "Rusya") {
-            console.log("Avrasya");
-            } else if (devlet === "Amerika") {
-            console.log("Kuzey Amerika");
-            } else if (devlet === "Brezilya") {
-            console.log("Güney Amerika");
-            } else if (devlet === "İngiltere") {
-            console.log("Avrupa");
-            } else {
-            console.log("Tanımlanmamış Kıta");
-            }
+// Fark:
+console.log("// ?? sadece null ve undefined kontrol eder");
+console.log("// || ise 0 veya boş string ('') olduğunda da devreye girer");
 
+console.log("\n=== 🔍 4️⃣ Optional Chaining (?.) ===");
 
+const saher = user?.ady?.no ?? "No data";
+// user.ady tanımlı → ama user.ady.no yok → bu durumda hata vermez, 'No data' döner
+console.log("Optional chaining sonucu:", saher);
 
+console.log("\n=== 🎯 5️⃣ Koşul Operatörü (Ternary Operator) ===");
+
+const bal = 10;
+const durumu =
+  bal >= 85 ? "Has Gowy" :
+  bal >= 70 ? "Gowy" :
+  bal >= 50 ? "Kanagatlanarly" :
+  "Gechmedi";
+console.log("bal:", bal, "→ Sonuç:", durumu);
+
+// Aynı şeyi if/else ile yazalım
+console.log("\n=== 🧾 6️⃣ Aynı koşulun if/else versiyonu ===");
+
+const ball = 55;
+if (ball >= 85) {
+  console.log("Has Gowy");
+} else if (ball >= 70) {
+  console.log("Gowy");
+} else if (ball >= 50) {
+  console.log("Kanagatlanarly");
+} else {
+  console.log("Gechmedi");
+}
+
+console.log("\n=== 🌍 7️⃣ Ülke kodu eşleştirme ===");
+
+const kod = "+7";
+if (kod === "+993") {
+  console.log("TM");
+} else if (kod === "+90") {
+  console.log("TR");
+} else if (kod === "+7") {
+  console.log("RU");
+} else if (kod === "+1") {
+  console.log("US");
+} else if (kod === "+44") {
+  console.log("UK");
+} else {
+  console.log("Bilinmeyen ülke kodu");
+}
+
+console.log("\n=== 🗺️ 8️⃣ Devlet → Kıta eşleştirme ===");
+
+const devlet = "Amerika";
+if (devlet === "Türkmenistan") {
+  console.log("Orta Asya");
+} else if (devlet === "Türkiye") {
+  console.log("Avrupa / Asya");
+} else if (devlet === "Rusya") {
+  console.log("Avrasya");
+} else if (devlet === "Amerika") {
+  console.log("Kuzey Amerika");
+} else if (devlet === "Brezilya") {
+  console.log("Güney Amerika");
+} else if (devlet === "İngiltere") {
+  console.log("Avrupa");
+} else {
+  console.log("Tanımlanmamış Kıta");
+}
+
+console.log("\n=== 🌐 9️⃣ Kıtalar (Object içinde listeler) ===");
 
 const kitalar = {
   "Asya": ["Türkmenistan", "Türkiye", "Çin", "Japonya", "Hindistan"],
@@ -93,15 +130,20 @@ const kitalar = {
   "Afrika": ["Mısır", "Nijerya", "Güney Afrika", "Kenya", "Fas"],
   "Kuzey Amerika": ["Amerika", "Kanada", "Meksika"],
   "Güney Amerika": ["Brezilya", "Arjantin", "Ekvador", "Peru"],
-  "Avustralya": ["Avustralya", "Yeni Zelanda",]
+  "Avustralya": ["Avustralya", "Yeni Zelanda"]
 };
-console.log(kitalar);
-//const devletler = "Afrika";  
-//if (kitalar[devletler]) {
-//  console.log(kitalar[devletler].join(", "));
-//} else {
-//  console.log("Bu isimde bir kıta bulunamadı.");
-//[]}
+console.log("Kıtalar nesnesi:", kitalar);
+
+console.log("\n=== 🔎 10️⃣ Belirli bir kıtadaki ülkeleri gösterme örneği ===");
+
+const secilenKita = "Afrika";
+
+if (kitalar[secilenKita]) {
+  console.log(`${secilenKita} kıtasındaki ülkeler:`);
+  console.log(kitalar[secilenKita].join(", "));
+} else {
+  console.log("Bu isimde bir kıta bulunamadı.");
+}
 
  
     </script>
