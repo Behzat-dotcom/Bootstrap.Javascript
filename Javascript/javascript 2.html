@@ -7,68 +7,110 @@
 </head>
 <body>
     <script>
-       console.log("Begzat");
-       function demo() {
-       //console.log(a);
-        var a=5;
-        let b=10;
-        {
-            var c=13;
-            let d=15;
-        }
-        console.log(c);
-        //console.log(d);
-       }
- demo();
+       // first Metod difference between var and let 
+      console.log("===  var / let farkı ===");
 
-       var loggerV=[];
-       for (var a=0; a<6; a++) loggerV.push(()=>console.log(a));
-       loggerV.forEach(a=>a());
+function demo() {
+  // console.log(a); // burada hata vermez ama 'undefined' olur (hoisting)
+  var a = 5;
+  let b = 10;
 
-       let loggerL=[];
-       for (let b=0; b<7; b++) loggerL.push(()=>console.log(b));
-       loggerL.forEach(b=>b());
+  {
+    var c = 13; // function scoped → dışarıdan erişilebilir
+    let d = 15; // block scoped → sadece bu süslü parantez içinde geçerli
+  }
 
-       const user={Ady:"Begzat", familya:"Halmominow", yash:23, yeri:"Koytendag"};
-       console.log(user);
-       user.Ady="Bega";
-       user.yash=24;
-       console.log(user);
+  console.log("c değişkeni (var ile):", c); // 13
+  // console.log(d); // ❌ hata: d tanımlı değil (block scope)
+}
+demo();
 
-       Object.freeze(user);
-      // Object.freeze(user);
+// Var ve let dongusu farki
+console.log("\n=== var vs let döngü farkı (closure) ===");
 
-      let m=5;
-      let n=m
-      n++
-      console.log(m,n);
+// var örneği
+var loggerV = [];
+for (var a = 0; a < 6; a++) loggerV.push(() => console.log("var ile:", a));
+loggerV.forEach(fn => fn()); // hepsi 6 yazar (tek değişken)
 
-      const beg={x:2};
-      const bega=beg
-      bega.x=55;
-      console.log(beg.x);
+// let örneği
+let loggerL = [];
+for (let b = 0; b < 7; b++) loggerL.push(() => console.log("let ile:", b));
+loggerL.forEach(fn => fn()); // 0 1 2 3 4 5 6 (her tur kendi kopyası)
 
-      const ID= Symbol("ID");
-      const user2={ ady:"Bega", [ID]:854};
-      console.log(user2);
-      console.log(Object.keys (user2));
-      console.log(Object.getOwnPropertySymbols (user2));
+//Example fro "Object.freeze() and deep.freeze()"
+console.log("\n===Object.freeze örneği ===");
 
-      var h=539;
-      console.log(h);
-      var j=(540).toString();
-      console.log(String(540));
+const user = { Ady: "Begzat", familya: "Halmominow", yash: 23, yeri: "Koytendag" };
+console.log("Başlangıç:", user);
 
-      Boolean("0");
-      Boolean(1);
-      Boolean(0);
+user.Ady = "Bega";  // değiştirilebilir
+user.yash = 24;
+console.log("Değiştirildikten sonra:", user);
 
-      5=="5"// true
-      5==="5"//false
+Object.freeze(user);
+user.yash = 99; // değişmez
+console.log("freeze sonrası (değişmedi):", user);
 
-      null==undefined// true
-      null===undefined// false
-    </script>
+// Example for Primitive and Referanse
+console.log("\n===Primitive (değer) vs Referans farkı ===");
+
+let m = 5;
+let n = m;
+n++;
+console.log("Primitive (m,n):", m, n); // 5 6 (ayrı değerler)
+
+const beg = { x: 2 };
+const bega = beg;
+bega.x = 55;
+console.log("Referans objeler:", beg.x); // 55 (aynı adresi paylaşıyorlar)
+
+console.log("\n=== 5️⃣ Symbol (benzersiz anahtar) ===");
+
+const ID = Symbol("ID");
+const user2 = { ady: "Bega", [ID]: 854 };
+console.log("user2:", user2);
+console.log("Object.keys:", Object.keys(user2)); // sadece "ady"
+console.log("Object.getOwnPropertySymbols:", Object.getOwnPropertySymbols(user2)); // [Symbol(ID)]
+
+console.log("\n=== 6️⃣ Tür dönüşümleri (Type Conversion) ===");
+
+let h = 539;
+console.log("Sayı:", h);
+let j = (540).toString();
+console.log("toString:", j);
+console.log("String(540):", String(540));
+
+console.log("Boolean('0'):", Boolean("0")); // true
+console.log("Boolean(1):", Boolean(1)); // true
+console.log("Boolean(0):", Boolean(0)); // false
+
+console.log("\n=== 7️⃣ == vs === karşılaştırmaları ===");
+
+console.log("5 == '5'  ➜", 5 == "5");   // true
+console.log("5 === '5' ➜", 5 === "5");  // false
+console.log("null == undefined ➜", null == undefined);   // true (özel kural)
+console.log("null === undefined ➜", null === undefined); // false (farklı tür)
+console.log("0 == false ➜", 0 == false); // true
+console.log("0 === false ➜", 0 === false); // false
+
+console.log("\n=== 8️⃣ Ekstra örnekler ===");
+
+console.log("'5' * 2 ➜", "5" * 2); // 10 (string sayı oldu)
+console.log("'5' + 2 ➜", "5" + 2); // "52" (string birleştirme)
+console.log("Number('42') ➜", Number("42")); // 42
+console.log("parseInt('42px') ➜", parseInt("42px")); // 42
+
+// null ve undefined kontrolü
+let test;
+if (test == null) console.log("test ya null ya undefined (== null ile kontrol)");
+
+// Object.freeze derinlik örneği
+const obj = { name: "A", data: { x: 1 } };
+Object.freeze(obj);
+obj.data.x = 99; // değişir çünkü içteki obje donmadı
+console.log("Derin freeze örneği:", obj);
+// iç katmanı yani derin dondurmak için deepçfreeze() kullanılır.
 
 
 </body>
