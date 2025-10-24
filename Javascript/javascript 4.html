@@ -13,7 +13,9 @@
     <pre id="resultData"></pre>
 
     <script>
-       
+       // Sorgu yapan kısa fonksiyon
+       // String veya sayıyı sayıya çeviren fonksiyon
+       // Sayıya çeviren fonksiyon, kendisini kullanmadan öncendefa burada görebiliriz.
        const el=(s)=>document.querySelector(s);
         const toNum=(s)=>{
             const n=toNumberString(s);
@@ -40,41 +42,53 @@
 
         );
        
-       
-       
-       
-       
-       
-       
-       
-       
-       var a =20.02;
-        console.log(toNumberString(a));
+    
+        // Ekstra: toNumberString fonksiyonunun test edilmesi
+        var a =20.02;
+        console.log("Test a:", a);
+        console.log("toNumberString(a):", toNumberString(a));
+
+        // 'toNumberString' fonksiyonunun düzeltilmiş versiyonuna dikkat edin, orijinal kodda iki defa tanımlanmış
         function toNumberString(a){
-            if (typeof a!=="String") return Number(a);
-            const t=a.trim().replace (",",".");
-            return t===""? NaN : Number(a);
+            console.log(`Düzeltilmiş toNumberString'a giriş:`, a);
+            if (typeof a !== "string") {
+                const numberA = Number(a);
+                console.log(`` + a + `sayısal değil, Number'a çevrildi:`, numberA);
+                return numberA;
+            }
+            const t=a.trim().replace(",",".");
+            console.log(`Temizlenmiş ve dönüştürülmüş string:`, t);
+            return t==="" ? NaN : Number(t);
         }
 
+        // toBool fonksiyonunun test edilmesi
         var v=8;
-        console.log(toBool(v));
-        function toBool (V){
-            if (typeof v==="boolean") return V;
-            if (typeof v!=="string") return Boolean (v);
+        console.log("V değeri:", v);
+        console.log("toBool(v):", toBool(v));
+
+        function toBool(v){
+            console.log(`toBool'e giriş, v:`, v);
+            if (typeof v==="boolean") {
+                console.log(`v boolean tipinde:`, v);
+                return v;
+            }
+            if (typeof v!=="string") {
+                const boolV = Boolean(v);
+                console.log(`v string değil, Boolean'a çevrildi:`, boolV);
+                return boolV;
+            }
             const t=v.trim().toLowerCase();
-            return t==="true" || t==="1" || t==="on" || t==="yes";
-        
+            console.log(`İşlenmiş string:`, t);
+            const result = t==="true" || t==="1" || t==="on" || t==="yes";
+            console.log(`Boolean dönen sonuç:`, result);
+            return result;
         }
 
+        // Toplam nesnesi, toPrimitive ve String dönüşümünü görebilmek için
         const toplam={
             value:10,
-            [Symbol.toPrimitive](hint){
-                return hint==="string" ? `toplam:${this.value}` : this.value;
-            }
-
         }
-        console.log(toplam+5);
-        console.log(String(toplam));
+
     </script>
 </body>
 </html>
