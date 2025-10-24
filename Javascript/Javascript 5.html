@@ -6,67 +6,113 @@
     <title>Javascript 5</title>
 </head>
 <body>
-<div id="card" data-san="0" data-invoise="true"></div>
-
-
     <script>
-     const p=new URLSearchParams (location.search);
-     const page=Number(p.get("page") ?? 1);
-     const active= Boolean (p.get ("active"));
-     const q=p.get("q") ?? "";
-     console.log(q);
-     
-     
-     const MyData={
-        sepet:[{id:1, urunSany:40}], toplam:520
-     };
+     // URL PARAMETRELERİNİ OKUMA
+// --------------------------
+// URL'deki sorgu (query string) parametrelerini okumak için URLSearchParams kullanılır.
+// Örnek: "https://site.com?page=2&active=true&q=kitap"
+const p = new URLSearchParams(location.search);
+
+// "page" parametresini alıyoruz. Yoksa varsayılan olarak 1 atanıyor.
+const page = Number(p.get("page") ?? 1);
+
+// "active" parametresini boolean (true/false) olarak alıyoruz.
+const active = Boolean(p.get("active"));
+
+// "q" parametresini alıyoruz. Yoksa boş string ("") atanıyor.
+const q = p.get("q") ?? "";
+console.log(q);
 
 
-     localStorage.setItem("app", JSON.stringify(MyData));
-     console.log(MyData);
+// LOCALSTORAGE VERİ KAYDETME VE OKUMA
+// ------------------------------------
+// localStorage — tarayıcıda kalıcı veri saklamak için kullanılır.
+// Veriler her zaman "string" olarak saklandığı için, nesneleri JSON formatına çevirmek gerekir.
+const MyData = {
+  sepet: [{ id: 1, urunSany: 40 }], // sepetteki ürün sayısı örneği
+  toplam: 520                       // toplam fiyat
+};
+
+// Veriyi JSON formatına dönüştürüp kaydediyoruz
+localStorage.setItem("app", JSON.stringify(MyData));
+console.log(MyData);
+
+// Kaydedilen veriyi geri alıyoruz ve tekrar JavaScript nesnesine dönüştürüyoruz.
+const saved = JSON.parse(localStorage.getItem("app") ?? "{}");
+
+// Kaydedilen verideki "sepet" dizisi gerçekten dizi mi kontrol ediyoruz.
+console.log(Array.isArray(saved.sepet));
 
 
-     const saved= JSON.parse(localStorage.getItem("app") ?? "{}");4
-     console.log (Array.isArray(saved.sepet));
+// HTML ELEMENTİNDEN DATA ATTRİBUTELERİ OKUMA
+// -------------------------------------------
+// HTML’de örneğin şöyle bir eleman varsa:
+// <div id="card" data-san="42" data-invoise="true"></div>
+const card = document.querySelector("#card");
+
+// "data-san" ve "data-invoise" attribute değerlerini alıyoruz
+const san = Number(card.dataset.san);
+const invoise = Boolean(card.dataset.invoise);
 
 
-     const card= document.querySelector("#card");
-     const san=Number(card.dataset.san);
-     const invoise=Boolean(card.dataset.invoise);
-
-
-     function pagination(sahypaParam){
-        const sahypa=(sahypaParam ?? 1);
-        return sahypa;
+// BASİT SAYFALAMA (PAGINATION) FONKSİYONU
+// ----------------------------------------
+// Fonksiyon, gelen sayfa parametresini döndürür, eğer yoksa varsayılan 1 döner.
+function pagination(sahypaParam) {
+  const sahypa = (sahypaParam ?? 1);
+  return sahypa;
 }
 
-       const s="1.549.75";
-        const parsMoney = (s)=>{
-        const t=s.replace(/[^\d,.-]/g,"").replace(",",".");
-        return Number (t);
-        console.log(t);
 
-        }
+// PARA FORMATINI SAYIYA ÇEVİRME 1. VERSİYON
+// ------------------------------------------
+// Örnek olarak: "1.549.75" -> 1549.75
+const s = "1.549.75";
 
-     function parseCurrency (s){
-        const arassala=s.replace(/[^\d,.-]/g,"").replace(/\./g,"").replace(",",".");
-        const gelenSan=Number(arassala);
-        console.log("Uytgedilen Format:", gelenSan);
-        return gelenSan;
-        }
-        const result=parseCurrency("1.234,50");
-        console.log(result);
-     
+const parsMoney = (s) => {
+  // Sadece rakam, virgül, nokta ve eksi işareti dışındaki karakterleri kaldır.
+  const t = s.replace(/[^\d,.-]/g, "").replace(",", ".");
+  return Number(t);
+  console.log(t); // Bu satır çalışmaz çünkü return üstte.
+};
 
 
-     function parseCurrency2 (s){
-        const uytget=n.replace(/^[a-z0-9]*[a-z][a-z0-9]*$/i).replace(",",".");
-        const netije=Number(uytget);
-        console.log("Uytgedilen Format:", netije);
-        return netije;
-        }
-        const result2=parseCurrency2("05397450854");
-        console.log(result2)
+// PARA FORMATINI SAYIYA ÇEVİRME 2. VERSİYON
+// ------------------------------------------
+// Avrupa para formatını (ör: "1.234,50") doğru şekilde dönüştürür.
+// "." işaretlerini (binlik ayırıcıları) siler, "," işaretini "." yapar.
+function parseCurrency(s) {
+  const arassala = s
+    .replace(/[^\d,.-]/g, "") // rakam, nokta, virgül, eksi dışındaki her şeyi sil
+    .replace(/\./g, "")       // binlik ayırıcı olan noktaları kaldır
+    .replace(",", ".");       // ondalık ayracı olan virgülü noktaya çevir
+
+  const gelenSan = Number(arassala); // sayıya çevir
+  console.log("Uytgedilen Format:", gelenSan);
+  return gelenSan;
+}
+
+const result = parseCurrency("1.234,50");
+console.log(result); // 1234.5
+
+
+// PARA FORMATINI SAYIYA ÇEVİRME 3. VERSİYON (HATALI ÖRNEK)
+// ---------------------------------------------------------
+// Bu fonksiyonda değişken adı yanlış kullanılmış (n yerine s olmalı).
+// Ayrıca regex formülü geçerli bir para formatı için uygun değil.
+// Hatalı ama eğitim amaçlı bırakılmış örnek:
+function parseCurrency2(s) {
+  // HATALI: 'n' tanımlı değil. 's' kullanılmalı.
+  const uytget = s
+    .replace(/^[a-z0-9]*[a-z][a-z0-9]*$/i, "") // yanlış regex
+    .replace(",", ".");
+  const netije = Number(uytget);
+  console.log("Uytgedilen Format:", netije);
+  return netije;
+}
+
+const result2 = parseCurrency2("05397450854");
+console.log(result2);
 
 
 
