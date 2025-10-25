@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript 8</title>
+</head>
+<body>
+    <script>
+        // Fonksiyonlara Başlayarys.
+        // Bu fonksiyonlarda Bildirim (declaration) vs ifade(expression)
+        // Bildirim host ediler yagny (hemme zady yokaryk alynar.)
+        // Ifade bu bir value (değer) yagny bir yerik aktarylyar.Host edılyar.
+
+
+
+        // declaration
+        function topla(x,y){
+            return x+y;
+        }
+        // expression
+        const kopelt=function(x,y){
+            return x*y;
+        }
+        //Ulanysh gornushi
+        console.log(kopelt(3,5));
+
+        // OK fonksion (arrow function)
+        n=5
+        const ikiGaty= n=>n*5; //Yekeje ifade gonu return.
+        
+        const toplaa=(a,b)=>{return a+b}; // Sebabi bu blok gowdesi (a,b)
+        console.log(toplaa(345,567));
+
+        // Parametreler : default, rest parchalara ayyrma.
+        function name(name="Begzat"){
+            return `привет ${name}`;
+
+        }
+        console.log(name("Begzat"));
+
+        //avg
+        function avgDAta(...numbers){
+            return numbers.reduce((b,g)=>b+g,0)/numbers.length;
+
+        }
+
+        //named params 
+        function connectUrl({host="localhost", port=5408}){
+            return`tcp://${host}: ${port}`;
+        }
+        console.log(connectUrl("localhost",5408));
+
+        // donush maglumatlary ir bolamsy uchin ulanylyar.
+        // return yok bolsa undefined
+        function validateEmail(b){
+            if(!b) return false;
+            const g=String(b).toLowerCase();
+            return g.includes("@");
+
+        }
+        console.log(validateEmail("Halmominowbegzat10@gmail.com"));
+
+
+        // this hereketi normal fonksiyon vd arrow
+        const h={
+            ady:"Begzat",
+            yaz(){console.log(this.ady)} // normal fonksiyon this h
+            }
+            h.yaz();
+
+            const btn=document.createElement("button"); // Ishlem yarat.Button
+            btn.textContent="Ileri", // Ileri icherisine yazgy yazyldy
+            document.body.append(btn); // bu yazgyny button icherisine yerleshdiryar.
+
+            // Arrow
+            const mod={
+                number:0,
+                // arrow oz this ini berip bilenok.
+                increase:()=>{/*barde thisin garashdygy yaly mod bolmaz.*/},
+                increaseLoop(){this.number++}
+
+            };
+            btn.addEventListener("click", mod.increaseLoop.bind(mod)); // bind barde stabil durmasy uchin ulanylyar.
+
+            console.log(mod);
+            
+
+            //argument vs rest
+            function kone(){
+                console.log(arguments.length); //bu aslynda array menzeshi ama degil.
+
+            }
+
+            // Rest ulanylyshy
+            function taze(...args){
+                console.log(args.map(x=>x)); 
+
+            }
+
+            //Error Gornushleri. yani Yontemleri
+            function parsJSON(s, fallbacj=null){
+                try{return JSON.parse(s);}
+                catch{return fallback;}
+            }
+            
+            
+            
+            
+            </script>
+</body>
+</html>
