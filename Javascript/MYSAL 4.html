@@ -171,126 +171,129 @@ Html Kody Berildi!
 
 <script>
     const steps = document.querySelectorAll(".step");
-    const progressBar = document.querySelectorAll(".progress-bar");
-    const stepIndicators=document.querySelectorAll(".step-indicator-item");
-    const prevBtn=document.getElementById("prevBtn");
-    const nextBtn=document.getElementById("nextBtn");
-    const submitBtn=document.getElementById("submitBtn");
-    const resultBox=document.getElementById("resultBox");
-    const form=document.getElementById("registerForm");
-    let currentSteps=0;
+    const progressBar = document.querySelector(".progress-bar");  
+    const stepIndicators = document.querySelectorAll(".step-indicator-item");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const submitBtn = document.getElementById("submitBtn");
+    const resultBox = document.getElementById("resultBox");
+    const form = document.getElementById("registerForm");
+    let currentStep = 0;
 
-
-    window.addEventListener("DOMContentLoaded", ()=>{
-        const inputs=form.querySelectorAll("input,select, textarea");
-        inputs.forEach(input=>{
-            const saved=localStorage.getItem("register_" + input.name);
-            if(saved!=null){
-                if(input.type==="checkbox"){
-                    input.type=saved==="true";
-                }
-                else{
-                    input.value=saved
+    window.addEventListener("DOMContentLoaded", () => {
+         
+        const inputs = form.querySelectorAll("input, select, textarea");
+        inputs.forEach(input => {
+            const savedSession = sessionStorage.getItem("register_" + input.name);
+            const savedLocal = localStorage.getItem("register_" + input.name);
+            // Öncelik: sessionStorage, yoksa localStorage'a bak
+            const saved = savedSession !== null ? savedSession : (savedLocal !== null ? savedLocal : null);
+            if (saved != null) {
+                if (input.type === "checkbox") {
+                    input.checked = saved === "true";
+                } else {
+                    input.value = saved;
                 }
             }
         });
         updateUI();
     });
 
-    function updateUI(){
-        steps.forEach((step, index)=>{
-            step.classList.toggle("active", index === currentSteps);
+    function updateUI() {
+        steps.forEach((step, index) => {
+            step.classList.toggle("active", index === currentStep);
         });
 
-        stepIndicators.forEach((indicator, index)=>{
-            indicator.classList.toggle("active-step", index===currentSteps);
+        stepIndicators.forEach((indicator, index) => {
+            indicator.classList.toggle("active-step", index === currentStep);
         });
 
-        const percentage=((currentSteps +1) / steps.length) * 100;
-        progressBar.style.width=percentage + "%";
-        prevBtn.disabled=currentSteps===0;
-        nextBtn.classList.toggle("d-none", currentSteps===steps.length -1);
-        submitBtn.classList.toggle("d-none", currentSteps!==steps.length -1);
-    };
+        const percentage = ((currentStep + 1) / steps.length) * 100;
+        progressBar.style.width = percentage + "%";
+        prevBtn.disabled = currentStep === 0;
+        nextBtn.classList.toggle("d-none", currentStep === steps.length - 1);
+        submitBtn.classList.toggle("d-none", currentStep !== steps.length - 1);
+    }
 
-    function saveCurrentStepToSession(){
-        const activeStep=steps[currentSteps];
-        const inputs=activeStep.querySelectorAll("input, select, textarea"); 
+    function saveCurrentStepToSession() {
+        const activeStep = steps[currentStep];
+        const inputs = activeStep.querySelectorAll("input, select, textarea");
 
-        inputs.forEach(inputs=>{
-            let value=input.type==="checkbox" ? input.checked : input.value;
-            sessionStorage.setItem("register_" + input.name,value);
+        // DÜZELTİLDİ: doğru değişken isimleri ile forEach
+        inputs.forEach(input => {
+            const value = input.type === "checkbox" ? input.checked : input.value;
+            sessionStorage.setItem("register_" + input.name, value);
         });
     }
 
-    function validateCurrentStep(){
-        const activeStep=steps[currentSteps];
-        const inputs=activeStep.querySelectorAll("[required]");
-        let valid=true;
+    function validateCurrentStep() {
+        const activeStep = steps[currentStep];
+        const inputs = activeStep.querySelectorAll("[required]");
+        let valid = true;
 
-        inputs.forEach(input=>{
-            if(!input.valid){
+        inputs.forEach(input => {
+            / 
+            if (input.type === "checkbox") {
+                
+            } else if (!input.value) {
                 input.classList.add("is-invalid");
-                valid=false;
-            }
-            else{
+                valid = false;
+            } else {
                 input.classList.remove("is-invalid");
             }
         });
 
-        if(!valid){
+        if (!valid) {
             alert("Bu Adimi Doldurun!!!!");
         }
         return valid;
-
     }
 
-    nextBtn.addEventListener("click", ()=>{
-        if(!validateCurrentStep()) return;
+    nextBtn.addEventListener("click", () => {
+        if (!validateCurrentStep()) return;
         saveCurrentStepToSession();
-        if(currentSteps < steps.length -1){
-            currentSteps ++;
+        if (currentStep < steps.length - 1) {
+            currentStep++;
             updateUI();
         }
     });
 
-    prevBtn.addEventListener("click", ()=>{
-        if(currentSteps > 0){
-            currentSteps --;
+    prevBtn.addEventListener("click", () => {
+        if (currentStep > 0) {
+            currentStep--;
             updateUI();
         }
     });
 
-    form.addEventListener("submit", (e)=>{
+    form.addEventListener("submit", (e) => {
         e.preventDefault();
-        if(!validateCurrentSteps()) return;
+        if (!validateCurrentStep()) return;
         saveCurrentStepToSession();
 
-        const formData={};
-        const inputs=form.querySelectorAll("input,select, textarea");
-        inputs.forEach(input=>{
-        if(input.type==="checkbox"){
-            formData[input.name] = input.chacked;
-        }   
-        else{
-            formData[input.name]= input.value;
-        } 
+        const formData = {};
+        const inputs = form.querySelectorAll("input, select, textarea");
+        inputs.forEach(input => {
+            if (input.type === "checkbox") {
+                formData[input.name] = input.checked;
+            } else {
+                formData[input.name] = input.value;
+            }
+        });
+
+        const key = "registeredUsers";
+        const exist = JSON.parse(localStorage.getItem(key) || "[]");
+        exist.push(formData);
+        localStorage.setItem(key, JSON.stringify(exist));
+
+         
+
+        resultBox.classList.remove("d-none");
+        resultBox.innerHTML = `<strong> Ustunlikli Tamamlandy!!</strong> <br/>
+        <small> Test ${key} </small>`;
     });
-
-    const key ="registeredUsers";
-    const exist=JSON.parse(localStorage.getItem(key) || "[]");
-    exist.push(formData);
-    localStorage.setItem(key, JSON.stringify(exist));
-
-    resultBox.classList.remove("d-none");
-    resultBox.innerHTML=`<strong> Ustunlikli Tamamlandy!!</strong> <br/>
-    <small> Test ${key} </small>`;
-
-    });
-
 
 </script>
-<script src="https://cdn.jsd()elivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
 </script>
 </body>
 </html>
